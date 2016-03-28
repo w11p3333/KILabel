@@ -400,7 +400,7 @@ NSString * const KILabelLinkKey = @"link";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSError *error = nil;
-        regex = [[NSRegularExpression alloc] initWithPattern:@"(?<!\\w)@([\\w\\_]+)?" options:0 error:&error];
+        regex = [[NSRegularExpression alloc] initWithPattern:@"@[\u4e00-\u9fa5a-zA-Z0-9_-]{4,30}" options:0 error:&error];
     });
     
     // Run the expression and get matches
